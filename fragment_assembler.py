@@ -1,8 +1,10 @@
 import numpy as np
 import itertools
 
+FRAGMENTS = ["ACT", "CTC", "CTG", "TGG", "TCT"]
+
 class FragmentAssembler:
-    def __init__(self, fragments):
+    def __init__(self, fragments = FRAGMENTS):
         """
         Initialize the FragmentAssembler with a list of fragments.
 
@@ -131,14 +133,14 @@ class FragmentAssembler:
         return best_superstring
     
 # # Example usage
-# fragments = ["ACT", "CTC", "CTG", "TGG", "TCT"]
-# assembler = FragmentAssembler(fragments)
+# # Create class instance
+# assembler = FragmentAssembler()
 
-# # Display the graph representation
+# # Graph
 # graph = assembler.graph()
 # print(graph)
 
-# # Display a Hamiltonian path
+# # Hamiltonian path
 # hamiltonian_path = assembler.hamiltonian_path()
 # print(hamiltonian_path)
 
