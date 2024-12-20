@@ -47,3 +47,21 @@ class FragmentAssembler:
                         overlap_matrix[i][j] = self._calculate_overlap(fragment1, fragment2)
 
             return overlap_matrix
+    
+    def graph(self):
+        """
+        Build and return the directed graph representation as a dictionary.
+        Each node has its neighbors as keys and overlap lengths as values.
+
+        Returns:
+            dict: A dictionary where each key is a fragment, and the value is a dictionary
+                  of neighboring fragments with their overlap lengths.
+        """
+        graph = {}
+        for i, fragment1 in enumerate(self.fragments):
+            neighbors = {}
+            for j, fragment2 in enumerate(self.fragments):
+                if self.overlap_matrix[i][j] > 0:
+                    neighbors[fragment2] = self.overlap_matrix[i][j]
+            graph[fragment1] = neighbors
+        return graph
