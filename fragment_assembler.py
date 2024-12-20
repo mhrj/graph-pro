@@ -129,3 +129,19 @@ class FragmentAssembler:
                 best_superstring = current_string
 
         return best_superstring
+    
+# # Example usage
+# fragments = ["ACT", "CTC", "CTG", "TGG", "TCT"]
+# assembler = FragmentAssembler(fragments)
+
+# # Display the graph representation
+# graph = assembler.graph()
+# print(graph)
+
+# # Display a Hamiltonian path
+# hamiltonian_path = assembler.hamiltonian_path()
+# print(hamiltonian_path)
+
+# # Find and print the shortest superstring
+# shortest_superstring = assembler.find_shortest_superstring()
+# print(shortest_superstring)
