@@ -102,3 +102,30 @@ class FragmentAssembler:
             return hamiltonian_path
         else:
             return {}
+        
+    def find_shortest_superstring(self):
+        """
+        Find the shortest superstring that contains all fragments as substrings.
+
+        Returns:
+            str: The shortest superstring.
+        """
+        best_superstring = None
+        max_overlap = -1
+
+        for perm in itertools.permutations(range(self.n)):
+            current_string = self.fragments[perm[0]]
+            total_overlap = 0
+
+            for i in range(1, self.n):
+                prev = perm[i - 1]
+                curr = perm[i]
+                overlap = self.overlap_matrix[prev][curr]
+                total_overlap += overlap
+                current_string += self.fragments[curr][overlap:]
+
+            if total_overlap > max_overlap:
+                max_overlap = total_overlap
+                best_superstring = current_string
+
+        return best_superstring
