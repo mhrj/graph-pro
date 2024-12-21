@@ -109,7 +109,7 @@ class GraphWindow(QMainWindow):
                 arrowsize=2,
                 arrowwidth=1,
                 arrowcolor='red',
-                standoff=10  # Adjust space for arrow
+                standoff=40  # Adjust space for arrow
             )
 
             # Add edge weight text at the midpoint of the edge
@@ -156,7 +156,7 @@ class GraphWindow(QMainWindow):
                         arrowsize=2,
                         arrowwidth=1,
                         arrowcolor='gray',
-                        standoff=10  # Adjust space for arrow
+                        standoff=40  # Adjust space for arrow
                     )
 
                     # Add edge weight text at the midpoint of the edge
@@ -166,7 +166,7 @@ class GraphWindow(QMainWindow):
                         x=[mid_x], y=[mid_y],
                         mode='text',
                         text=[f'{edge_weight}'],
-                        textposition='middle center',  # Position the weight in the middle of the edge
+                        textposition='top center',  # Position the weight in the middle of the edge
                         textfont=dict(size=12, color="black"),
                         hoverinfo='none',
                         showlegend=False
